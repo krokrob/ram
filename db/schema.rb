@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171217202305) do
+ActiveRecord::Schema.define(version: 20171218200408) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "contacts", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_contacts_on_user_id"
+  end
 
   create_table "memories", force: :cascade do |t|
     t.string "title"
@@ -25,6 +35,15 @@ ActiveRecord::Schema.define(version: 20171217202305) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_memories_on_user_id"
+  end
+
+  create_table "memory_contacts", force: :cascade do |t|
+    t.bigint "memory_id"
+    t.bigint "contact_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["contact_id"], name: "index_memory_contacts_on_contact_id"
+    t.index ["memory_id"], name: "index_memory_contacts_on_memory_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -44,5 +63,8 @@ ActiveRecord::Schema.define(version: 20171217202305) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "contacts", "users"
   add_foreign_key "memories", "users"
+  add_foreign_key "memory_contacts", "contacts"
+  add_foreign_key "memory_contacts", "memories"
 end
