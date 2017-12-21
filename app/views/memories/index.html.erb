@@ -1,0 +1,10 @@
+<div class="cards-xs">
+  <div class="card-xs">
+    <%= material_icon.add.md_48 %>
+  </div>
+  <% @memories.each do |memory| %>
+    <div class="card-xs" style='<%= thumb_background(memory.photo) %>'>
+    </div>
+  <% end %>
+</div>
+

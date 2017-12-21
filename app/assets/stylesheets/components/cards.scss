@@ -1,0 +1,16 @@
+.cards-xs {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.card-xs {
+  background: $gray;
+  height: 90px;
+  width: 90px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}

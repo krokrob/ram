@@ -4,7 +4,7 @@
   background: $red;
   transition: all 0.3s ease;
   height: 70px;
-  padding: 0px 30px;
+  padding: 0px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -13,7 +13,7 @@
 
 /* Logo */
 .navbar-wagon-brand img {
-  height: 35px;
+  height: 36px;
 }
 
 /* User Avatar */
@@ -33,7 +33,6 @@
 /* Basic navbar item */
 .navbar-wagon-item {
   cursor: pointer;
-  padding: 0 20px;
 }
 
 /* Navbar link */
