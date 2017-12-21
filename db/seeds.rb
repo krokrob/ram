@@ -10,7 +10,17 @@ bibi = Contact.create(first_name: 'Alba', user: anisa)
 mado = Contact.create(first_name: 'Mado', user: kevin)
 babi = Contact.create(first_name: 'Babi Luan i bukur', user: anisa)
 
-nd = Memory.new(
-  title: 'Visite du sommet de Notre-Dame',
-  address: 'Eglise Notre-Dame, Paris',
-)
+nd = Memory.create(title: 'Visite du sommet de Notre-Dame',
+  address: 'Eglise Notre-Dame, Paris', user: kevin)
+MemoryContact.create(contact: melissa, memory: nd)
+
+brutus = Memory.create(title: 'Crêprerie Chez Brutus',
+  address: "rue des dames, Paris", user: kevin)
+
+boca = Memory.create(title: 'Burrito la Boca Mexa',
+  address: '120 rue Oberkampf, Paris', user: kevin)
+MemoryContact.create(memory: boca, contact: mado)
+
+watch = Memory.create(title: 'Montre Skanden Anita 159e chez Louis Pion',
+  address: 'Les Halles, Paris', user: kevin)
+MemoryContact.create(contact: mado, memory: watch)
