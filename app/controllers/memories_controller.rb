@@ -6,6 +6,11 @@ class MemoriesController < ApplicationController
   end
 
   def show
+    @marker = [{
+      lat: @memory.latitude,
+      lng: @memory.longitude#,
+      # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+    }]
   end
 
   def create
