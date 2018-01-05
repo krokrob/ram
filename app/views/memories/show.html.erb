@@ -1,27 +1,29 @@
-<div class="bg-gray padded-1em">
-  <div class="card">
-    <div class="card-image-box">
-      <div class="card-image"></div>
-      <div class="card-share"></div>
+<div class="card">
+  <div class="card-image-box">
+    <%= image_tag 'Notre_Dame_de_Paris.jpg', class: "card-image" %>
+    <div class="card-share">
+      <i class="fa fa-share"></i>
     </div>
-    <div class="card-content">
-      <div class="card-contacts">
-        <% @memory.contacts.each do |contact| %>
-          <div class="card-contact">
-            <div class="card-contact-avatar">
-            </div>
-            <div class="card-contact-name">
-              <%= contact.name %>
-            </div>
-          </div>
-        <% end %>
-      </div>
-      <div class="card-description">
-        <%= @memory.title %>
-      </div>
-    </div>
-    <div id="card-map"
-      style="width: 300px;height: 300px;"
-      data-markers="<%= @marker.to_json %>"></div>
   </div>
+  <div class="card-content">
+    <div class="card-contacts">
+      <% @memory.contacts.each do |contact| %>
+        <div class="card-contact">
+          <%= image_tag 'melissa_avatar.png', class: "card-contact-avatar" %>
+          <div class="card-contact-name">
+            <%= contact.name %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="card-description">
+      <%= @memory.title %>
+    </div>
+  </div>
+  <% unless (@memory.latitude.nil? || @memory.latitude.nil?) %>
+    <div id="card-map"
+      style="height: 300px;"
+      data-markers="<%= @marker.to_json %>">
+    </div>
+  <% end %>
 </div>
