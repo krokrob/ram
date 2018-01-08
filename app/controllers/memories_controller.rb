@@ -1,5 +1,6 @@
 class MemoriesController < ApplicationController
   before_action :set_memory, only: [ :show, :update, :destroy]
+  layout :naked, only: :new
 
   def index
     @memories = current_user.memories
@@ -11,6 +12,10 @@ class MemoriesController < ApplicationController
       lng: @memory.longitude#,
       # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
     }]
+  end
+
+  def new
+    @memory = Memory.new
   end
 
   def create
