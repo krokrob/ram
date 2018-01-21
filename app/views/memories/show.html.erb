@@ -1,6 +1,10 @@
 <div class="card">
   <div class="card-image-box">
-    <%= image_tag 'Notre_Dame_de_Paris.jpg', class: "card-image" %>
+    <% if @memory.photo.present? %>
+      <%= cl_image_tag @memory.photo, class: "card-image" %>
+    <% else %>
+      <%= image_tag 'Notre_Dame_de_Paris.jpg', class: "card-image" %>
+    <% end %>
     <div class="card-share">
       <i class="fa fa-share"></i>
     </div>

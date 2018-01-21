@@ -1,6 +1,5 @@
 class MemoriesController < ApplicationController
   before_action :set_memory, only: [ :show, :update, :destroy]
-  layout :naked, only: :new
 
   def index
     @memories = current_user.memories
@@ -16,10 +15,17 @@ class MemoriesController < ApplicationController
 
   def new
     @memory = Memory.new
+    render layout: "naked"
   end
 
   def create
-
+    @memory = Memory.new(memory_params)
+    @memory.user = current_user
+    if @memory.save
+      redirect_to memories_path
+    else
+      render :new
+    end
   end
 
   def destroy
