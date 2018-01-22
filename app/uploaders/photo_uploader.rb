@@ -17,7 +17,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-    cloudinary_transformation :width => 100, :height => 100, :crop => :thumb
+    cloudinary_transformation :width => 180, :height => 180, :crop => :fill, gravity: :center
     process :convert => 'jpg'
   end
 

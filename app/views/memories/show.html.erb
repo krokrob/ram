@@ -2,14 +2,15 @@
   <div class="card-image-box">
     <% if @memory.photo.present? %>
       <%= cl_image_tag @memory.photo, class: "card-image" %>
-    <% else %>
-      <%= image_tag 'Notre_Dame_de_Paris.jpg', class: "card-image" %>
     <% end %>
     <div class="card-share">
       <i class="fa fa-share"></i>
     </div>
   </div>
   <div class="card-content">
+    <div class="card-description">
+      <%= @memory.title %>
+    </div>
     <div class="card-contacts">
       <% @memory.contacts.each do |contact| %>
         <div class="card-contact">
@@ -19,9 +20,6 @@
           </div>
         </div>
       <% end %>
-    </div>
-    <div class="card-description">
-      <%= @memory.title %>
     </div>
   </div>
   <% unless (@memory.latitude.nil? || @memory.latitude.nil?) %>
