@@ -15,6 +15,7 @@ class MemoriesController < ApplicationController
 
   def new
     @memory = Memory.new
+    @address = Geocoder.search([params[:latitude], params[:longitude]]).first&.data&.[]('formatted_address')
     render layout: "naked"
   end
 

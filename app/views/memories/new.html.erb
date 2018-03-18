@@ -3,7 +3,7 @@
     <%= f.input :title %>
     <!-- TODO nested attributes for contacts -->
     <%= f.input :photo %>
-    <%= f.input :address %>
+    <%= f.input :address, input_html: { value: @address } %>
     <%= f.submit "Save", class: "btn btn-default" %>
   <% end %>
 </div>
