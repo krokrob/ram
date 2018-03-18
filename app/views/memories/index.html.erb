@@ -1,7 +1,8 @@
 <div class="cards-xs">
   <div class="card-xs">
     <%= material_icon.add.md_48 %>
-    <%= link_to '', new_memory_path, class: 'card-link', id: 'add-memory' %>
+    <%= link_to '', new_memory_path, class: 'card-link', id: 'add-memory',
+      data: { target_url: new_memory_url } %>
     <input type="file" accept="image/*" capture="camera" class="hidden" id="photo-input" />
   </div>
   <% @memories.each do |memory| %>

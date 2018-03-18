@@ -1,9 +1,19 @@
 <div class="container padded">
+  <% if @marker %>
+    <div id="card-map"
+      style="height: 300px;width:100%"
+      data-markers="<%= @marker.to_json %>">
+    </div>
+  <% end %>
   <%= simple_form_for @memory do |f| %>
     <%= f.input :title %>
     <!-- TODO nested attributes for contacts -->
     <%= f.input :photo %>
-    <%= f.input :address %>
+    <%= f.input :address, input_html: { value: @address } %>
     <%= f.submit "Save", class: "btn btn-default" %>
   <% end %>
 </div>
+
+<% content_for :after_js do %>
+  <%= javascript_pack_tag 'map' %>
+<% end %>
