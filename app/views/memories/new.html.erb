@@ -1,4 +1,10 @@
 <div class="container padded">
+  <% if @marker %>
+    <div id="card-map"
+      style="height: 300px;width:100%"
+      data-markers="<%= @marker.to_json %>">
+    </div>
+  <% end %>
   <%= simple_form_for @memory do |f| %>
     <%= f.input :title %>
     <!-- TODO nested attributes for contacts -->
