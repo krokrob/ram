@@ -13,3 +13,7 @@
     <%= f.submit "Save", class: "btn btn-default" %>
   <% end %>
 </div>
+
+<% content_for :after_js do %>
+  <%= javascript_pack_tag 'map' %>
+<% end %>
