@@ -61,6 +61,8 @@
 
       var data = canvas.toDataURL('image/png');
       photo.setAttribute('src', data);
+      const photoInput = document.getElementById('memory_photo');
+      photoInput.value = data;
     } else {
       clearphoto();
     }
