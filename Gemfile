@@ -19,6 +19,7 @@ gem 'webpacker'
 
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
+gem 'carrierwave-base64'
 gem 'geocoder'
 
 group :development do

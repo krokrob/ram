@@ -1,19 +1,29 @@
+<div class="camera">
+  <video id="video">Video stream not available.</video>
+  <button id="startbutton">Take photo</button>
+</div>
+<canvas id="canvas">
+</canvas>
+<div class="output">
+  <img id="photo" alt="The screen capture will appear in this box.">
+</div>
 <div class="container padded">
-  <% if @marker %>
-    <div id="card-map"
-      style="height: 300px;width:100%"
-      data-markers="<%= @marker.to_json %>">
-    </div>
-  <% end %>
   <%= simple_form_for @memory do |f| %>
     <%= f.input :title %>
     <!-- TODO nested attributes for contacts -->
-    <%= f.input :photo %>
+    <%= f.input :photo, as: :hidden %>
     <%= f.input :address, input_html: { value: @address } %>
     <%= f.submit "Save", class: "btn btn-default" %>
   <% end %>
 </div>
+<% if @marker %>
+  <div id="card-map"
+    style="height: 300px;width:100%"
+    data-markers="<%= @marker.to_json %>">
+  </div>
+<% end %>
 
 <% content_for :after_js do %>
   <%= javascript_pack_tag 'map' %>
+  <%= javascript_pack_tag 'camera' %>
 <% end %>
