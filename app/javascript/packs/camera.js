@@ -15,10 +15,12 @@
     photo = document.getElementById('photo');
     startbutton = document.getElementById('startbutton');
 
-    navigator.mediaDevices.getUserMedia({ video: true, audio: false })
-      .then(function(stream) {
-          video.srcObject = stream;
-          video.play();
+    navigator.mediaDevices.getUserMedia({
+      video: { facingMode: "environment" },
+      audio: false
+    }).then(function(stream) {
+        video.srcObject = stream;
+        video.play();
       })
       .catch(function(err) {
           console.log("An error occured! " + err);
@@ -67,6 +69,11 @@
       clearphoto();
     }
   }
+
+  // flip camera
+  // var front = false;
+  // document.getElementById('flip-button').onclick = function() { front = !front; };
+  // var constraints = { video: { facingMode: (front? "user" : "environment") } };
 
   window.addEventListener('DOMContentLoaded', () => startup());
 })();

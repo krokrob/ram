@@ -7,7 +7,7 @@
   </div>
   <% @memories.each do |memory| %>
     <div class="card-xs" style='<%= thumb_background(memory.photo) %>'>
-      <div class="text-center">item</div>
+      <div class="text-center"><%= memory.title %></div>
       <%= link_to '', memory_path(memory), class: 'card-link' %>
     </div>
   <% end %>
