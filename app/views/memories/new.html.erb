@@ -1,6 +1,6 @@
 <div class="camera">
   <video id="video">Video stream not available.</video>
-  <button id="startbutton">Take photo</button>
+  <div class="text-center" id="startbutton"><%= material_icon.photo_camera.md_36 %></div>
 </div>
 <canvas id="canvas">
 </canvas>
@@ -11,7 +11,8 @@
   <%= simple_form_for @memory do |f| %>
     <%= f.input :title %>
     <!-- TODO nested attributes for contacts -->
-    <%= f.input :photo, input_html: { class: 'hidden' },
+    <%= f.input :photo, as: :hidden %>
+    <%#= f.input :photo, input_html: { class: 'hidden' },
       label_html: { class: 'hidden btn btn-primary',
                     id: 'add-photo-button' },
       label: 'Add photo' %>
