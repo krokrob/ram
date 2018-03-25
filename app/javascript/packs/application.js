@@ -1,8 +1,5 @@
 import 'bootstrap';
-import { bindNewMemoryGeolocation, initGeolocation } from '../components/geolocation'
-
-if (initGeolocation()) {
-  console.log('geoloc possible');
+import { bindNewMemoryGeolocation } from '../components/geolocation'
+if ("geolocation" in navigator) {
   bindNewMemoryGeolocation();
 }
-

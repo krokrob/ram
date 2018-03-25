@@ -23,7 +23,12 @@
         video.play();
       })
       .catch(function(err) {
-          console.log("An error occured! " + err);
+        const camera = document.querySelector('.camera');
+        camera.classList.add('hidden');
+        const output = document.querySelector('.output');
+        output.classList.add('hidden');
+        const addPhotoButton = document.getElementById('add-photo-button');
+        addPhotoButton.classList.remove('hidden');
       });
     video.addEventListener('canplay', function(ev){
       if (!streaming) {
