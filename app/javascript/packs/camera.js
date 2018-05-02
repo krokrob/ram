@@ -62,6 +62,9 @@
   function takepicture() {
     var context = canvas.getContext('2d');
     if (width && height) {
+      const camera = document.querySelector('.camera');
+      camera.classList.add('hidden');
+
       canvas.width = width;
       canvas.height = height;
       context.drawImage(video, 0, 0, width, height);

@@ -1,12 +1,12 @@
 <div class="camera">
   <video id="video">Video stream not available.</video>
-  <div class="text-center" id="startbutton"><%= material_icon.photo_camera.md_36 %></div>
 </div>
 <canvas id="canvas">
 </canvas>
 <div class="output">
-  <img id="photo" alt="The screen capture will appear in this box.">
+  <img class="hidden" id="photo" alt="The screen capture will appear in this box.">
 </div>
+<div class="text-center" id="startbutton"><%= material_icon.photo_camera.md_36 %></div>
 <div class="container padded">
   <%= simple_form_for @memory do |f| %>
     <%= f.input :title %>
