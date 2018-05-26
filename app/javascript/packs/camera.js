@@ -1,5 +1,5 @@
 (function() {
-  var width = 320;    // We will scale the photo width to this
+  var width = screen.width;    // We will scale the photo width to this
   var height = 0;     // This will be computed based on the input stream
 
   var streaming = false;
@@ -14,6 +14,7 @@
     canvas = document.getElementById('canvas');
     photo = document.getElementById('photo');
     startbutton = document.getElementById('startbutton');
+    resetButton = document.getElementById('resetbutton');
 
     navigator.mediaDevices.getUserMedia({
       video: { facingMode: "environment" },
@@ -47,10 +48,19 @@
       ev.preventDefault();
     }, false);
 
+    resetButton.addEventListener('click', function(e) {
+      clearphoto();
+
+    });
+
     clearphoto();
   }
 
   function clearphoto() {
+    const camera = document.querySelector('.camera');
+    camera.classList.remove('hidden');
+    document.getElementById('photo-box').classList.add('hidden');
+
     var context = canvas.getContext('2d');
     context.fillStyle = "#AAA";
     context.fillRect(0, 0, canvas.width, canvas.height);
@@ -71,7 +81,7 @@
 
       var data = canvas.toDataURL('image/png');
       photo.setAttribute('src', data);
-      photo.classList.remove('hidden');
+      document.getElementById('photo-box').classList.remove('hidden');
       const photoInput = document.getElementById('memory_photo');
       photoInput.value = data;
     } else {

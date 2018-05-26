@@ -6,14 +6,16 @@
 }
 .card-xs {
   background: $gray;
-  height: 90px;
-  width: 90px;
+  height: 150px;
+  width: 150px;
   border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
   position: relative;
+  padding: 1em;
+  font-size: 16px;
 }
 .card-link {
   bottom: 0;

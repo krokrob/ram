@@ -10,14 +10,10 @@
 
   <!-- Dropdown list appearing on mobile only -->
   <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <%= material_icon.menu.md_36.css_class("dropdown-toggle").html(data: { toggle: "dropdown" }) %>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
-      </ul>
-    </div>
+    <%= link_to new_memory_path, class: 'navbar-wagon-link', id: 'add-memory',
+      data: { target_url: new_memory_url } do %>
+      <%= material_icon.add.md_48 %>
+    <% end %>
   </div>
 </div>
 

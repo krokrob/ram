@@ -1,13 +1,20 @@
 <div class="camera">
   <video id="video">Video stream not available.</video>
+  <div class="text-center camera-action" id="startbutton">
+    <%= material_icon.photo_camera.md_36 %>
+  </div>
 </div>
 <canvas id="canvas">
 </canvas>
 <div class="output">
-  <img class="hidden" id="photo" alt="The screen capture will appear in this box.">
+  <div class="hidden" id="photo-box">
+    <img id="photo" alt="The screen capture will appear in this box.">
+    <div class="text-center camera-action" id="resetbutton">
+      <%= material_icon.close_circle_outline.md_36 %>
+    </div>
+  </div>
 </div>
-<div class="text-center" id="startbutton"><%= material_icon.photo_camera.md_36 %></div>
-<div class="container padded">
+<div class="container">
   <%= simple_form_for @memory do |f| %>
     <%= f.input :title %>
     <!-- TODO nested attributes for contacts -->
