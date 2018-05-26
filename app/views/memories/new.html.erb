@@ -1,17 +1,28 @@
 <div class="camera">
   <video id="video">Video stream not available.</video>
-  <button id="startbutton">Take photo</button>
+  <div class="text-center camera-action" id="startbutton">
+    <%= material_icon.photo_camera.md_36 %>
+  </div>
 </div>
 <canvas id="canvas">
 </canvas>
 <div class="output">
-  <img id="photo" alt="The screen capture will appear in this box.">
+  <div class="hidden" id="photo-box">
+    <img id="photo" alt="The screen capture will appear in this box.">
+    <div class="text-center camera-action" id="resetbutton">
+      <%= material_icon.close_circle_outline.md_36 %>
+    </div>
+  </div>
 </div>
-<div class="container padded">
+<div class="container">
   <%= simple_form_for @memory do |f| %>
     <%= f.input :title %>
     <!-- TODO nested attributes for contacts -->
     <%= f.input :photo, as: :hidden %>
+    <%#= f.input :photo, input_html: { class: 'hidden' },
+      label_html: { class: 'hidden btn btn-primary',
+                    id: 'add-photo-button' },
+      label: 'Add photo' %>
     <%= f.input :address, input_html: { value: @address } %>
     <%= f.submit "Save", class: "btn btn-default" %>
   <% end %>
