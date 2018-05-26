@@ -7,6 +7,11 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <link rel="stylesheet" type="text/css" href="../../style/addtohomescreen.css">
+    <script src="../../src/addtohomescreen.js"></script>
+    <script>
+      addToHomescreen();
+    </script>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
