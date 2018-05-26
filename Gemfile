@@ -15,7 +15,7 @@ gem 'material_icons'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
-gem 'webpacker'
+gem 'webpacker', '~> 3.2.0'
 
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
