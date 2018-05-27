@@ -6,7 +6,7 @@
 // General style
 $font-family-sans-serif:  $body-font;
 $headings-font-family:    $headers-font;
-$body-bg:                 $red;
+$body-bg:                 $blue;
 $font-size-base: 16px;
 $text-color: white;
 
@@ -24,8 +24,6 @@ $border-radius-large: 2px;
 $border-radius-small: 2px;
 
 // Buttons color & border-color & background color
-$btn-default-bg: $gray;
-$btn-default-color: white;
-$btn-default-border: $gray;
+$btn-primary-border: white;
 
 // Override other variables below!
