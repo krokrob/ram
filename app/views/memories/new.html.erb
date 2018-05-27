@@ -14,17 +14,18 @@
     </div>
   </div>
 </div>
-<div class="container">
+<div class="container text-center padded-1em">
   <%= simple_form_for @memory do |f| %>
     <%= f.input :title %>
     <!-- TODO nested attributes for contacts -->
     <%= f.input :photo, as: :hidden %>
+    <%= f.input :photo_cache, as: :hidden %>
     <%#= f.input :photo, input_html: { class: 'hidden' },
       label_html: { class: 'hidden btn btn-primary',
                     id: 'add-photo-button' },
       label: 'Add photo' %>
     <%= f.input :address, input_html: { value: @address } %>
-    <%= f.submit "Save", class: "btn btn-default" %>
+    <%= f.submit "Save", class: "btn btn-full-width btn-default" %>
   <% end %>
 </div>
 <% if @marker %>
