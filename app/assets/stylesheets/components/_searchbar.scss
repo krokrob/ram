@@ -1,0 +1,17 @@
+.searchbar {
+  display: flex;
+  align-items: center;
+}
+#search-input {
+  background-color: inherit;
+  border-bottom: 1px solid white;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  outline: none;
+  width: 0px;
+  transition: width 1s ease;
+  &.visible-input {
+    width: calc(100vw - 76px);
+  }
+}
