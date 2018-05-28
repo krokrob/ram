@@ -1,5 +1,4 @@
 const share = (e) => {
-  console.log(e.currentTarget.dataset.title);
   if (navigator.share) {
     navigator.share({
       title: e.currentTarget.dataset.title,
@@ -8,6 +7,9 @@ const share = (e) => {
     })
     .then(() => console.log('Successful share'))
     .catch((error) => console.log('Error sharing', error));
+  }
+  else {
+    // copy url to clipboard
   }
 }
 
