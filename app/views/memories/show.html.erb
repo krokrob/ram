@@ -3,23 +3,16 @@
     <% if @memory.photo.present? %>
       <%= cl_image_tag @memory.photo, class: "card-image" %>
     <% end %>
-    <div class="card-share">
-      <i class="fa fa-share"></i>
-    </div>
   </div>
   <div class="card-content">
     <div class="card-description">
-      <%= @memory.title %>
+      <h1><%= @memory.title %></h1>
     </div>
-    <div class="card-contacts">
-      <% @memory.contacts.each do |contact| %>
-        <div class="card-contact">
-          <%= image_tag 'melissa_avatar.png', class: "card-contact-avatar" %>
-          <div class="card-contact-name">
-            <%= contact.name %>
-          </div>
-        </div>
-      <% end %>
+    <div class="card-share"
+         data-title="I share my memory with you on RAM"
+         data-text="<%= @memory.title %>"
+         data-url="<%= memory_url(@memory) %>">
+      <%= material_icon.share_variant %>
     </div>
   </div>
   <% unless (@memory.latitude.nil? || @memory.latitude.nil?) %>
