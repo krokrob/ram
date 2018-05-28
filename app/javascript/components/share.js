@@ -16,7 +16,9 @@ const share = (e) => {
 const bindShareButtonClick = () => {
   const shareButton = document.querySelector('.card-share');
   if (shareButton) {
-    shareButton.addEventListener('click', share);
+    shareButton.addEventListener('click', (e) => {
+      share(e);
+    });
   }
 }
 
