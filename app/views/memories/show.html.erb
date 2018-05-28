@@ -8,7 +8,10 @@
     <div class="card-description">
       <h1><%= @memory.title %></h1>
     </div>
-    <div class="card-share">
+    <div class="card-share"
+         data-title="I share my memory with you on RAM"
+         data-text="<%= @memory.title %>"
+         data-url="<%= memory_url(@memory) %>">
       <%= material_icon.share_variant %>
     </div>
   </div>

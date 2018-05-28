@@ -8,7 +8,7 @@ class MemoriesController < ApplicationController
   def show
     @marker = [{
       lat: @memory.latitude,
-      lng: @memory.longitude#,
+      lng: @memory.longitude,
       infoWindow: { content: render_to_string(partial: "/memories/map_box", locals: { memory: @memory }) }
     }]
   end
