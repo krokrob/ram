@@ -9,7 +9,7 @@ class MemoriesController < ApplicationController
     @marker = [{
       lat: @memory.latitude,
       lng: @memory.longitude#,
-      # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      infoWindow: { content: render_to_string(partial: "/memories/map_box", locals: { memory: @memory }) }
     }]
   end
 
@@ -19,7 +19,7 @@ class MemoriesController < ApplicationController
       @address = Geocoder.search([params[:latitude], params[:longitude]]).first&.data&.[]('formatted_address')
       @marker = [{
         lat: params[:latitude],
-        lng: params[:longitude]
+        lng: params[:longitude],
       }]
     end
     render layout: "naked"

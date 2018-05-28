@@ -29,17 +29,8 @@
 }
 .card-content {
   padding: 1em;
-  background-color: $red;
-}
-.card-contact {
   display: flex;
-  align-items: center;
-  padding-bottom: 1em;
 }
-.card-contact-avatar {
-  width: 70px;
-  border-radius: 50%;
-}
-.card-contact-name {
-  margin-left: 10px;
+.card-description {
+  flex-grow: 1;
 }
