@@ -7,13 +7,14 @@
   var video = null;
   var canvas = null;
   var photo = null;
-  var startbutton = null;
+  var startButton = null;
+  var resetButton = null;
 
   function startup() {
     video = document.getElementById('video');
     canvas = document.getElementById('canvas');
     photo = document.getElementById('photo');
-    startbutton = document.getElementById('startbutton');
+    startButton = document.getElementById('startbutton');
     resetButton = document.getElementById('resetbutton');
 
     navigator.mediaDevices.getUserMedia({
@@ -43,7 +44,7 @@
       }
     }, false);
 
-    startbutton.addEventListener('click', function(ev){
+    startButton.addEventListener('click', function(ev){
       takepicture();
       ev.preventDefault();
     }, false);

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const MemoryMenuItem = ({memory}) => (
-  <div className="">
+  <div className="search-result">
     <img
       alt={memory.title}
       src={memory.photo_url}

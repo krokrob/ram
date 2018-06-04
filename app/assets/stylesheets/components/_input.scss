@@ -1,0 +1,14 @@
+.form-control, .form-control:focus {
+  border-bottom: 1px solid white;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  outline: none;
+  box-shadow: none;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.rbt-input-hint {
+  color: $light-gray !important;
+}

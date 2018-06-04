@@ -1,7 +1,7 @@
 import React from 'react';
 import { AsyncTypeahead } from 'react-bootstrap-typeahead';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
-import { MemoryMenuItem } from './memory_menu_item';
+import MemoryMenuItem from './memory_menu_item';
 
 const makeAndHandleRequest = (query) => {
   const url = `/api/v1/memories?query=${query}`;
@@ -22,8 +22,7 @@ class Searchbar extends React.Component {
       <div>
         <AsyncTypeahead
           {...this.state}
-          labelKey="query"
-          bsSize="sm"
+          labelKey='title'
           minLength={3}
           onSearch={this._handleSearch}
           onChange={(selected) => {
@@ -31,7 +30,7 @@ class Searchbar extends React.Component {
           }}
           placeholder="Search for a memory"
           renderMenuItemChildren={(option, props) => (
-            <MemoryMenuItem key={option.id} apply={option} />
+            <MemoryMenuItem key={option.id} memory={option} />
           )}
         />
       </div>
