@@ -1,0 +1,15 @@
+.searchbar {
+  display: flex;
+  align-items: center;
+}
+.search-result {
+  display: flex;
+  align-items: center;
+}
+#searchbar {
+  width: 0px;
+  transition: width 0.5s ease;
+  &.visible-input {
+    width: calc(100vw - 76px);
+  }
+}
