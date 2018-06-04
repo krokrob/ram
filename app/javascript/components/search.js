@@ -1,3 +1,12 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Searchbar from './search/searchbar';
+
+const searchbar = document.getElementById('searchbar');
+if (searchbar) {
+  ReactDOM.render(<Searchbar />, searchbar);
+}
+
 function bindSearchButtonClick() {
   const searchButton = document.getElementById("search-button");
   if (searchButton) {
