@@ -30,7 +30,8 @@
 .card-content {
   padding: 1em;
   display: flex;
+  justify-content: space-between;
 }
-.card-description {
-  flex-grow: 1;
+.card-share {
+  width: 50px;
 }

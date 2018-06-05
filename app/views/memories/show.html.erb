@@ -1,8 +1,6 @@
 <div class="card">
   <div class="card-image-box">
-    <% if @memory.photo.present? %>
-      <%= cl_image_tag @memory.photo, class: "card-image" %>
-    <% end %>
+    <%= cl_image_tag @memory.photo_url, class: "card-image" %>
   </div>
   <div class="card-content">
     <div class="card-description">
@@ -12,7 +10,7 @@
          data-title="I share my memory with you on RAM"
          data-text="<%= @memory.title %>"
          data-url="<%= memory_url(@memory) %>">
-      <%= material_icon.share_variant %>
+      <%= material_icon.share_variant.md_36 %>
     </div>
   </div>
   <% unless (@memory.latitude.nil? || @memory.latitude.nil?) %>
@@ -22,3 +20,4 @@
     </div>
   <% end %>
 </div>
+
