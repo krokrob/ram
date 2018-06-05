@@ -9,4 +9,13 @@ class Memory < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   validates :title, presence: :true, length: { maximum: 45 }
+
+  include PgSearch
+  pg_search_scope :global_search,
+                  against: [:title, :address],
+                  ignoring: :accents,
+                  using: {
+                    tsearch: { prefix: true }
+                  },
+                  order_within_rank: "memories.updated_at DESC"
 end

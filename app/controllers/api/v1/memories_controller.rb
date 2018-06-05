@@ -1,6 +1,6 @@
 class Api::V1::MemoriesController < ApplicationController
   def index
-    memories = current_user.memories.where('title LIKE ?', "%#{params[:query]}%")
+    memories = current_user.memories.global_search(params[:query]).with_pg_search_rank
     memories = memories.map do |memory|
       {
         id: memory.id,
