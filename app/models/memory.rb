@@ -16,6 +16,5 @@ class Memory < ApplicationRecord
                   ignoring: :accents,
                   using: {
                     tsearch: { prefix: true }
-                  },
-                  order_within_rank: "memories.updated_at DESC"
+                  }
 end

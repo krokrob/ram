@@ -22,7 +22,7 @@ class Searchbar extends React.Component {
       <div>
         <AsyncTypeahead
           {...this.state}
-          labelKey='title'
+          labelKey={option => `${option.title}, ${option.address}`}
           minLength={3}
           onSearch={this._handleSearch}
           onChange={(selected) => {
