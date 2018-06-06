@@ -27,7 +27,7 @@ MemoryContact.create(memory: boca, contact: mado)
 
 watch = Memory.create(title: 'Montre Skanden Anita 159e chez Louis Pion',
   address: 'Les Halles, Paris', user: kevin)
-watch.tag_list('gift')
+watch.tag_list.add('gift')
 watch.save
 MemoryContact.create(contact: mado, memory: watch)
 
