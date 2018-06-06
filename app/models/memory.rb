@@ -17,4 +17,5 @@ class Memory < ApplicationRecord
                   using: {
                     tsearch: { prefix: true }
                   }
+  acts_as_taggable
 end
