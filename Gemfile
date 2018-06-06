@@ -17,6 +17,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker', '~> 3.2.0'
 
+gem 'acts-as-taggable-on', '~> 5.0'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 gem 'carrierwave-base64'
