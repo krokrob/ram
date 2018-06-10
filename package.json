@@ -2,6 +2,7 @@
   "name": "ram",
   "private": true,
   "dependencies": {
+    "@mdi/font": "^2.4.85",
     "@rails/webpacker": "^3.5.3",
     "babel-preset-react": "^6.24.1",
     "bootstrap": "3",

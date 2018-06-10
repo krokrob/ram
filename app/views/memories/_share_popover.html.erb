@@ -1,0 +1,17 @@
+<div class="share-popover">
+  <a href="sms://?body=Hello I want to share you a memory on RAM <%= memory_url(memory) %>">
+     <i class="mdi mdi-message-text-outline mdi-24px" aria-hidden="true"></i>
+  </a>
+  <a href="whatsapp://send?text=Hello I want to share you a memory on RAM <%= memory_url(memory) %>">
+     <i class="mdi mdi-whatsapp mdi-24px" aria-hidden="true"></i>
+  </a>
+  <a href="https://www.facebook.com/sharer/sharer.php?<%= { u: memory_url(memory), t: memory.title, src: 'sdkpreparse' }.to_query %>"
+     target="_blank"
+     title="FB">
+    <i class="mdi mdi-facebook mdi-24px" aria-hidden="true"></i>
+   </a>
+   <div class="fb-share-button" data-href="http://localhost:3000/memories/14" data-layout="button" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A3000%2Fmemories%2F14&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Partager</a></div>
+  <a href="mailto:">
+    <i class="mdi mdi-gmail mdi-24px" aria-hidden="true"></i>
+  </a>
+</div>
