@@ -8,7 +8,7 @@ const MemoryMenuItem = ({memory}) => (
       style={{
         height: '50px',
         marginRight: '10px',
-        width: '50px',
+        width: '50px'
       }}
     />
     <div>
