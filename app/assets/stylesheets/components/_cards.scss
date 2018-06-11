@@ -23,14 +23,17 @@
   width: 100%;
   z-index: 2;
 }
-
+.card-image-box {
+  position: relative;
+}
 .card-image {
   width: 100%;
 }
+.card-share {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+}
 .card-content {
   padding: 1em;
-  display: flex;
-}
-.card-description {
-  flex-grow: 1;
 }

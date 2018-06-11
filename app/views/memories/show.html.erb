@@ -1,19 +1,24 @@
 <div class="card">
-  <div class="card-image-box">
-    <% if @memory.photo.present? %>
-      <%= cl_image_tag @memory.photo, class: "card-image" %>
-    <% end %>
-  </div>
+  <% unless @memory.photo.present? %>
+    <div class="card-image-box">
+      <%= cl_image_tag @memory.photo_url, class: "card-image" %>
+      <div class="card-share">
+        <span href='#'
+           data-title="Share your memory"
+           data-text="<%= @memory.title %>"
+           data-url="<%= memory_url(@memory) %>"
+           data-container="body"
+           data-toggle="popover"
+           data-placement="bottom"
+           data-html=true
+           data-content='<%= render "memories/share_popover", memory: @memory %>'>
+          <i class="mdi mdi-share-variant mdi-24px" aria-hidden="true"></i>
+        </span>
+      </div>
+    </div>
+  <% end %>
   <div class="card-content">
-    <div class="card-description">
-      <h1><%= @memory.title %></h1>
-    </div>
-    <div class="card-share"
-         data-title="I share my memory with you on RAM"
-         data-text="<%= @memory.title %>"
-         data-url="<%= memory_url(@memory) %>">
-      <%= material_icon.share_variant %>
-    </div>
+    <%= @memory.title %>
   </div>
   <% unless (@memory.latitude.nil? || @memory.latitude.nil?) %>
     <div id="card-map"
@@ -22,3 +27,4 @@
     </div>
   <% end %>
 </div>
+

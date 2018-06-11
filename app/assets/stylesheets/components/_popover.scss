@@ -1,0 +1,14 @@
+.popover {
+  color: $gray;
+}
+.share-popover {
+  width: 160px;
+  display: flex;
+  justify-content: space-between;
+  a {
+    color: $gray;
+    &:hover {
+      color: black;
+    }
+  }
+}
