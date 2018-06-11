@@ -8,4 +8,3 @@ if ("geolocation" in navigator) {
   bindNewMemoryGeolocation();
 }
 bindSearchButtonClick();
-bindShareButtonClick();
