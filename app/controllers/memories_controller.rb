@@ -20,7 +20,7 @@ class MemoriesController < ApplicationController
       @address = Geocoder.search([params[:latitude], params[:longitude]]).first&.data&.[]('formatted_address')
       @marker = [{
         lat: params[:latitude],
-        lng: params[:longitude],
+        lng: params[:longitude]
       }]
     end
     render layout: "naked"
@@ -33,6 +33,10 @@ class MemoriesController < ApplicationController
     if @memory.save
       redirect_to memories_path
     else
+      @marker = [{
+        lat: @memory.latitude,
+        lng: @memory.longitude
+      }]
       render :new
     end
   end
@@ -49,6 +53,6 @@ private
   end
 
   def memory_params
-    params.require(:memory).permit(:title, :photo, :address)
+    params.require(:memory).permit(:title, :photo, :photo_cache, :address)
   end
 end

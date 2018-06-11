@@ -9,6 +9,10 @@
   padding-right: 0px;
 }
 
+.has-error .form-control:focus {
+  box-shadow: none;
+}
+
 .rbt-input-hint {
   color: $light-gray !important;
 }
