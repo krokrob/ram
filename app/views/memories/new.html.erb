@@ -17,14 +17,9 @@
 <div class="container text-center padded-1em">
   <%= simple_form_for @memory do |f| %>
     <%= f.input :title, hint: '45 characters max.' %>
-    <!-- TODO nested attributes for contacts -->
     <%= f.input :photo, as: :hidden %>
     <%= f.input :photo_cache, as: :hidden %>
-    <%#= f.input :photo, input_html: { class: 'hidden' },
-      label_html: { class: 'hidden btn btn-primary',
-                    id: 'add-photo-button' },
-      label: 'Add photo' %>
-    <%= f.input :address, input_html: { value: @address } %>
+    <%= f.input :address, input_html: { value: @memory.address ||= @address } %>
     <%= f.submit "Save", class: "btn btn-full-width btn-primary" %>
   <% end %>
 </div>
@@ -35,7 +30,5 @@
   </div>
 <% end %>
 
-<% content_for :after_js do %>
-  <%= javascript_pack_tag 'map' %>
-  <%= javascript_pack_tag 'camera' %>
-<% end %>
+<%= javascript_pack_tag 'camera' %>
+
