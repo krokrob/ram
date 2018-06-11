@@ -7,7 +7,6 @@ const bindNewMemoryGeolocation = () => {
     addMemoryButton.addEventListener('click', (e) =>  {
       e.preventDefault();
       const targetUrl = e.currentTarget.dataset.targetUrl;
-      console.log('geoloc started...');
       geolocation((position) => {
         window.location = `${targetUrl}?latitude=${position.coords.latitude}&longitude=${position.coords.longitude}`;
       }, (err) => {

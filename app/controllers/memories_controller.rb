@@ -2,7 +2,7 @@ class MemoriesController < ApplicationController
   before_action :set_memory, only: [ :show, :update, :destroy]
 
   def index
-    @memories = current_user.memories
+    @memories = policy_scope(Memory)
   end
 
   def show
@@ -15,6 +15,7 @@ class MemoriesController < ApplicationController
 
   def new
     @memory = Memory.new
+    authorize @memory
     if params[:latitude] && params[:longitude]
       @address = Geocoder.search([params[:latitude], params[:longitude]]).first&.data&.[]('formatted_address')
       @marker = [{
@@ -28,6 +29,7 @@ class MemoriesController < ApplicationController
   def create
     @memory = Memory.new(memory_params)
     @memory.user = current_user
+    authorize @memory
     if @memory.save
       redirect_to memories_path
     else
@@ -43,6 +45,7 @@ private
 
   def set_memory
     @memory = Memory.find(params[:id])
+    authorize @memory
   end
 
   def memory_params
