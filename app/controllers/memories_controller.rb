@@ -49,6 +49,7 @@ private
 
   def set_memory
     @memory = Memory.find(params[:id])
+    @sharing = Sharing.create(memory: @memory)
     authorize @memory
   end
 
