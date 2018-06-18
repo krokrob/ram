@@ -2,6 +2,9 @@ class Memory < ApplicationRecord
   belongs_to :user
   has_many :memory_contacts, dependent: :destroy
   has_many :contacts, through: :memory_contacts
+  has_many :sharings
+
+  has_secure_token
 
   mount_base64_uploader :photo, PhotoUploader
 

@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :memories
   has_many :contacts
+  has_many :sharings
 end

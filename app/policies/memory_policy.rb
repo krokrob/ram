@@ -6,7 +6,7 @@ class MemoryPolicy < ApplicationPolicy
   end
 
   def show?
-    record.user == user
+    record.user == user || user_has_sharing?
   end
 
   def new?
@@ -15,5 +15,11 @@ class MemoryPolicy < ApplicationPolicy
 
   def create?
     true
+  end
+
+  private
+
+  def user_has_sharing?
+    user.sharings.where(memory: record, token: record.token).any?
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180612184948) do
+ActiveRecord::Schema.define(version: 20180618213957) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20180612184948) do
     t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "token"
     t.index ["user_id"], name: "index_memories_on_user_id"
   end
 
@@ -48,9 +49,9 @@ ActiveRecord::Schema.define(version: 20180612184948) do
   end
 
   create_table "sharings", force: :cascade do |t|
-    t.string "token"
     t.bigint "user_id"
     t.bigint "memory_id"
+    t.string "token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["memory_id"], name: "index_sharings_on_memory_id"

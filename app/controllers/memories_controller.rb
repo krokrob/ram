@@ -11,7 +11,6 @@ class MemoriesController < ApplicationController
       lng: @memory.longitude,
       infoWindow: { content: render_to_string(partial: "/memories/map_box", locals: { memory: @memory }) }
     }]
-    @sharing = Sharing.new(token: SecureRandom::base58)
   end
 
   def new
@@ -50,10 +49,15 @@ private
 
   def set_memory
     @memory = Memory.find(params[:id])
+    set_sharing if params[:token]
     authorize @memory
   end
 
   def memory_params
     params.require(:memory).permit(:title, :photo, :photo_cache, :address)
+  end
+
+  def set_sharing
+    @sharing = Sharing.first_or_create(user: current_user, memory: @memory, token: params[:token])
   end
 end

@@ -1,11 +1,11 @@
 <div class="share-popover">
-  <a href="sms://?body=Hello I want to share you a memory on pensine <%= memory_url(memory, token: sharing.token) %>">
+  <a href="sms://?body=Hello I want to share you a memory on pensine <%= memory_url(memory, token: memory.token) %>">
      <i class="mdi mdi-message-text-outline mdi-24px" aria-hidden="true"></i>
   </a>
-  <a href="whatsapp://send?text=Hello I want to share you a memory on pensine <%= memory_url(memory, token: sharing.token) %>">
+  <a href="whatsapp://send?text=Hello I want to share you a memory on pensine <%= memory_url(memory, token: memory.token) %>">
      <i class="mdi mdi-whatsapp mdi-24px" aria-hidden="true"></i>
   </a>
-  <a href="https://www.facebook.com/sharer/sharer.php?<%= { u: memory_url(memory, token: sharing.token), t: memory.title, src: 'sdkpreparse' }.to_query %>"
+  <a href="https://www.facebook.com/sharer/sharer.php?<%= { u: memory_url(memory, token: memory.token), t: memory.title, src: 'sdkpreparse' }.to_query %>"
      target="_blank"
      title="FB">
     <i class="mdi mdi-facebook mdi-24px" aria-hidden="true"></i>
