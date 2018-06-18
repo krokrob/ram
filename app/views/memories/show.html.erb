@@ -10,6 +10,9 @@
             data-content='<%= render "memories/share_popover", memory: @memory, sharing: @sharing %>'>
         <i class="mdi mdi-share-variant mdi-24px" aria-hidden="true"></i>
       </span>
+      <%= simple_form_for [@memory, @sharing], html: { class: 'hidden' } do |f| %>
+        <%= f.input :token %>
+      <% end %>
     </div>
   </div>
   <div class="card-content">

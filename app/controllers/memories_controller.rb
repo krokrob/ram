@@ -11,6 +11,7 @@ class MemoriesController < ApplicationController
       lng: @memory.longitude,
       infoWindow: { content: render_to_string(partial: "/memories/map_box", locals: { memory: @memory }) }
     }]
+    @sharing = Sharing.new(token: SecureRandom::base58)
   end
 
   def new
@@ -49,7 +50,6 @@ private
 
   def set_memory
     @memory = Memory.find(params[:id])
-    @sharing = Sharing.create(memory: @memory)
     authorize @memory
   end
 
