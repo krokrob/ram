@@ -11,6 +11,7 @@ class MemoriesController < ApplicationController
       lng: @memory.longitude,
       infoWindow: { content: render_to_string(partial: "/memories/map_box", locals: { memory: @memory }) }
     }]
+    @sharings = @memory.sharings.includes(:user)
   end
 
   def new

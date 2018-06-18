@@ -14,6 +14,7 @@
   </div>
   <div class="card-content">
     <%= @memory.title %>
+    <p><%= pluralize(@sharings.count, 'share') %></p>
   </div>
   <% unless (@memory.latitude.nil? || @memory.latitude.nil?) %>
     <div id="card-map"
